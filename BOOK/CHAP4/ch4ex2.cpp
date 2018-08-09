@@ -3,7 +3,7 @@
 /// shows you how to use libclang to tokenize a stream of the first 60
 /// characters of a source code file. 
 
-extern "C" {
+extern "C"{
 #include "clang-c/Index.h"
 }
 #include "llvm/Support/CommandLine.h"

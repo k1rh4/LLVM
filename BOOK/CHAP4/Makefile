@@ -10,8 +10,6 @@ COMMON_FLAGS=-Wall -Wextra
 CXXFLAGS+=$(COMMON_FLAGS) $(shell $(LLVM_CONFIG) --cxxflags) -fno-rtti
 CPPFLAGS+=$(shell $(LLVM_CONFIG) --cppflags) -I$(SRC_DIR)
 CLANGLIBS=\
-  -v  \
-  -Wl,--start-group\
   -lclang\
   -lclangFrontend\
   -lclangDriver\
@@ -22,13 +20,13 @@ CLANGLIBS=\
   -lclangEdit\
   -lclangAST\
   -lclangLex\
-  -lclangBasic\
-  -Wl,--end-group
+  -lclangBasic
+#  -Wl,--end-group
 LLVMLIBS=$(shell $(LLVM_CONFIG) --libs)
 SYSTEMLIBS=$(shell $(LLVM_CONFIG) --system-libs)
 
-PROJECT=ch4ex1
-PROJECT_OBJECTS=ch4ex1.o
+PROJECT=ch4ex2
+PROJECT_OBJECTS=ch4ex2.o
 
 default: $(PROJECT)
 
