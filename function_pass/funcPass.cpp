@@ -24,8 +24,14 @@ namespace
 				errs() << "BasicBlock: "  << BB.getName() << ": " << BB.size() << "\n";
 				for(Instruction &II : BB)
 				{
-					errs() << "Instuction : " << II.getName() << " : " << "\n";
-					errs() << II.getFunction()->getName() << "\n";
+					errs() << "--------------------------\n";
+					errs() << "Instuction : " << II.getName();
+					errs() << "ValueName  : " << II.getValueName()<< "\n";
+					errs() << "ValueOPcode  : " << II.getOpcodeName()<< "\n";
+					errs() << "GetFuncName : " << II.getFunction()->getName() << "\n";
+					errs() << "GetOperand(0) : " << II.getOperand(0)->getName()<<"\n";
+					errs() << "GetOperand(1) : " << II << "\n";
+
 				}
 			}
 
